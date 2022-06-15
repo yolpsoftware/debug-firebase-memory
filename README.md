@@ -15,4 +15,6 @@ To reproduce the problem:
 * Press "Load Pages" again. This time the documents are loaded from AsyncStorage
 * Note the much lower memory consumption
 
+If you get "Quota exceeded" errors, just try again, or play around with the number of documents to be loaded (line 19 `App.js`).
+
 Conclusion: to load 100 MB of documents from Firestore, the Firebase client needs more than 2 GB of memory. This memory is not released, it cannot be garbage collected after the data load has finished.
