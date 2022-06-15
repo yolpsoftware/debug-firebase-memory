@@ -16,10 +16,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const COLLECTION_NAME = 'debug-firestore-memory';
-const NUMBER_OF_DOCS_TO_LOAD = 1000;
+const NUMBER_OF_DOCS_TO_LOAD = 500;
 
 export default function App() {
-  const [nOfWrittenDocs, setNOfWrittenDocs] = React.useState(0);
+
+  // === CODE TO GENERATE THESE DOCUMENTS ===
+  /*const [nOfWrittenDocs, setNOfWrittenDocs] = React.useState(0);
   const createDocs = async () => {
     const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const CHARS_LEN = CHARS.length;
@@ -49,9 +51,11 @@ export default function App() {
       }
     }
   }
-  // useEffect(() => {
-  //   createDocs();
-  // }, []);
+  useEffect(() => {
+    createDocs();
+  }, []);*/
+  // === END OF CODE TO GENERATE THESE DOCUMENTS ===
+
   const [loadedFromFirestore, setLoadedFromFirestore] = useState(null);
   const [docs, setDocs] = useState([]);
   const loadDocs = async () => {
